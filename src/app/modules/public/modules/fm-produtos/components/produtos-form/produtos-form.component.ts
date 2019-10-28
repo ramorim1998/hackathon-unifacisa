@@ -17,15 +17,17 @@ export class ProdutosFormComponent implements OnInit {
 
   ngOnInit() {
 
-    this.route.params.subscribe((params: any) => { const id = params['id'];
-    const produto$ = this.service.getById(id);
-    produto$.subscribe(produto =>{ this.update(produto)
+    this.route.params.subscribe((params: any) => {
+      const id = params['id'];
+      const produto$ = this.service.getById(id);
+      produto$.subscribe(produto => {
+        this.update(produto)
 
+      })
     })
-  })
 
     this.form = this.fb.group({
-      id:[null],
+      id: [null],
       nome: [null, [Validators.required, Validators.minLength(3)]],
       categoriasId: [null, [Validators.required, Validators.max(3)]],
       desc: [null, Validators.required],
@@ -33,7 +35,7 @@ export class ProdutosFormComponent implements OnInit {
     });
   }
 
-  update (produto){
+  update(produto) {
     this.form.patchValue({
       id: produto.id,
       nome: produto.nome,
@@ -49,8 +51,13 @@ export class ProdutosFormComponent implements OnInit {
     this.submited = true;
     console.log(this.form.value);
     if (this.form.valid) {
-      this.service.cadastrar(this.form.value).subscribe();
-      alert("seu produto foi cadastrado com sucesso")
+      if (this.form.value.id  ) {
+        this.service.atualizar(this.form.value).subscribe();
+        alert("seu produto foi atualizado com sucesso");
+      } else {
+        this.service.cadastrar(this.form.value).subscribe();
+        alert("seu produto foi cadastrado com sucesso")
+      }
     }
   }
   onCancel() {

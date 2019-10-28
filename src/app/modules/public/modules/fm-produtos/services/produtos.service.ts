@@ -22,6 +22,10 @@ export class ProdutosService {
     return this.http.get(`${'http://localhost:3000/produtos'}/${id}`);
   }
 
+  atualizar(modelo: ProdutosModel){
+    return this.http.put(`${'http://localhost:3000/produtos'}/${modelo.id}`,modelo)
+  }
+
   excluir(modelo: ProdutosModel): Observable<any>{
     return this.http.delete<any>(`${'http://localhost:3000/produtos'}/${modelo.id}`);
   }  
