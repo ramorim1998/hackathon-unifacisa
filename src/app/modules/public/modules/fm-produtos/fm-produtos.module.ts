@@ -5,7 +5,6 @@ import { PesquisarProdutosComponent } from './components/pesquisar-produtos/pesq
 import { FmProdutosRoutingModule } from './fm-produtos-routing.module';
 import { ProdutosService } from './services/produtos.service';
 
-
 @NgModule({
   declarations: [PesquisarProdutosComponent],
   imports: [

@@ -1,10 +1,11 @@
 <app-container-padrao titulo="Produtos">
+    <button routerLink="/hackathon-unifacisa/novo-prod" id = "add-buton" class="btn btn-primary btn-sm float-right">Adicionar Produto</button>
   <table class="table table-striped">
     <thead>
       <tr>
         <th scope="col">#</th>
         <th scope="col">Nome</th>
-        <th scope="col">Descricao</th>
+        <th scope="col">Categoria</th>
         <th scope="col">Valor</th>
         <th scope="col">Opções</th>
       </tr>
@@ -16,8 +17,8 @@
         <td>{{produto.desc}}</td>
         <td>{{produto.valor | currency:'BRL':true}}</td>
         <td>
-          <button class="btn btn-danger btn-sm mr-2">Remover</button>
-          <button class="btn btn-primary btn-sm">Editar</button>
+          <button class="btn btn-danger btn-sm mr-2"(click)="excluir(produto)">Remover</button>
+          <button class="btn btn-primary btn-sm" (click)="editar(produto.id)">Editar</button>
         </td>
       </tr>
     </tbody>
