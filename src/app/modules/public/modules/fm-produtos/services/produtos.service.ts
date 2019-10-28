@@ -18,6 +18,10 @@ export class ProdutosService {
     return this.http.post<any>('http://localhost:3000/produtos', modelo);
   }
 
+  getById(id){
+    return this.http.get(`${'http://localhost:3000/produtos'}/${id}`);
+  }
+
   excluir(modelo: ProdutosModel): Observable<any>{
     return this.http.delete<any>(`${'http://localhost:3000/produtos'}/${modelo.id}`);
   }  

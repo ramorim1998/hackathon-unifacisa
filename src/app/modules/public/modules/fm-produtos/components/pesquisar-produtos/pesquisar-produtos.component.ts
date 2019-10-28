@@ -28,7 +28,7 @@ export class PesquisarProdutosComponent implements OnInit {
     alert('produto removido')
   }
   editar(id){
-    this.router.navigate(['//hackathon-unifacisa/editar-prod'],id),{relativeTo: this.route};
+    this.router.navigate([`/hackathon-unifacisa/editar-prod/${id}`]),{relativeTo: this.route};
   }
 }
 
