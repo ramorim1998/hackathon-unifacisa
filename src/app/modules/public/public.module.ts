@@ -1,3 +1,4 @@
+import { CategoriaService } from './modules/fm-produtos/services/categoria.service';
 import { ProdutosService } from './modules/fm-produtos/services/produtos.service';
 import { ProdutosFormComponent } from './modules/fm-produtos/components/produtos-form/produtos-form.component';
 import { CommonModule } from '@angular/common';
@@ -8,6 +9,7 @@ import { PublicRoutingModule } from './public-routing.module';
 import { HomeButtonsComponent } from './components/home-buttons/home-buttons.component';
 import { InfoComponent } from './components/info/info.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FmCategoriaComponent } from './modules/fm-categoria/fm-categoria.component';
 
 
 @NgModule({
@@ -15,7 +17,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     HomeButtonsComponent,
     ProdutosFormComponent,
-    InfoComponent
+    InfoComponent,
+    FmCategoriaComponent
   ],
   imports: [
     CommonModule,
@@ -23,6 +26,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     PublicRoutingModule,
     ReactiveFormsModule
   ],
-  providers:[ProdutosService],
+  providers:[ProdutosService,CategoriaService],
 })
 export class PublicModule { }
