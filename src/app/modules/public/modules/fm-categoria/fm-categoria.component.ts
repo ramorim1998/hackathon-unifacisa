@@ -14,10 +14,13 @@ export class FmCategoriaComponent implements OnInit {
   constructor(private service: CategoriaService) { }
 
   ngOnInit() {
-    this.service.getProdutos().subscribe(listaCategoria =>{
+    this.service.getCategorias().subscribe(listaCategoria =>{
       this.categorias = listaCategoria;
-    });
-    
+    }); 
+  }
+  excluir(categoria:CategoriaModel) {
+    this.service.excluir(categoria).subscribe(sucess => console.log('removido'));
+    alert('categoria removida')
   }
 
 }

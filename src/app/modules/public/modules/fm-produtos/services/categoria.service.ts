@@ -7,9 +7,25 @@ import { Observable } from 'rxjs';
 export class CategoriaService {
 
   constructor(
-    private http : HttpClient
+    private http: HttpClient
   ) { }
-  getProdutos(): Observable<CategoriaModel[]> {
+  getCategorias(): Observable<CategoriaModel[]> {
     return this.http.get<CategoriaModel[]>('http://localhost:3000/categorias');
+  }
+
+  cadastrar(modelo: CategoriaModel): Observable<any> {
+    return this.http.post<any>('http://localhost:3000/categorias', modelo);
+  }
+
+  getById(id) {
+    return this.http.get(`${'http://localhost:3000/categorias'}/${id}`);
+  }
+
+  atualizar(modelo: CategoriaModel) {
+    return this.http.put(`${'http://localhost:3000/categorias'}/${modelo.id}`, modelo)
+  }
+
+  excluir(modelo: CategoriaModel): Observable<any> {
+    return this.http.delete<any>(`${'http://localhost:3000/categorias'}/${modelo.id}`);
   }
 }
