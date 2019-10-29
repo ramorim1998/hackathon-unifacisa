@@ -1,3 +1,4 @@
+import { CategoriaFormComponent } from './modules/fm-categoria/categoria-form/categoria-form.component';
 import { FmCategoriaComponent } from './modules/fm-categoria/fm-categoria.component';
 import { InfoComponent } from './components/info/info.component';
 import { ProdutosFormComponent } from './modules/fm-produtos/components/produtos-form/produtos-form.component';
@@ -24,7 +25,9 @@ const routes: Routes = [
       { path: 'novo-prod', component: ProdutosFormComponent },
       { path: 'editar-prod/:id', component: ProdutosFormComponent },
       { path: 'info', component: InfoComponent },
-      { path: 'categoria', component: FmCategoriaComponent }
+      { path: 'categoria', component: FmCategoriaComponent },
+      { path: 'nova-categ', component: CategoriaFormComponent },
+      {path: 'editar-categ/:id', component : CategoriaFormComponent}
 
 
     ]

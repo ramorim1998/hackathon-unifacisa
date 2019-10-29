@@ -10,6 +10,7 @@ import { HomeButtonsComponent } from './components/home-buttons/home-buttons.com
 import { InfoComponent } from './components/info/info.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FmCategoriaComponent } from './modules/fm-categoria/fm-categoria.component';
+import { CategoriaFormComponent } from './modules/fm-categoria/categoria-form/categoria-form.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { FmCategoriaComponent } from './modules/fm-categoria/fm-categoria.compon
     HomeButtonsComponent,
     ProdutosFormComponent,
     InfoComponent,
-    FmCategoriaComponent
+    FmCategoriaComponent,
+    CategoriaFormComponent
   ],
   imports: [
     CommonModule,

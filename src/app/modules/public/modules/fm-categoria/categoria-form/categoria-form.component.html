@@ -1,0 +1,12 @@
+
+<form [formGroup]="form">
+  <div class="form-group">
+    <label for="nome">Nome</label>
+    <input type="text" class="form-control" id="nome" placeholder="Nome" formControlName="descricao"
+      [ngClass]="{'is-invalid': submited && errors('nome')}" />
+    <div class="invalid-feedback">
+      Nome invalido
+    </div>
+    <button type="submit" class="btn btn-primary" (click)='onSubmit()'>Submit</button>
+  <button type="submit" class="btn btn-secondary" (click)='onCancel()'>Cancelar</button>
+  </div>
